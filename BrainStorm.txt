@@ -1,0 +1,10 @@
+Kitten Challenge
+
+Bewegung: Player: Teleport, Gegner: NavMesh 
+Waffen: 
+- Besen -> Loch im Boden
+- Hände -> Wegwerfen
+- Kissenschleuder
+- Kissen oder anderes werfen
+
+Kitten spawnen in Wellen
