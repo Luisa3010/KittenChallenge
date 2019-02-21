@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.vrtest4.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Motion Capture u. VR\\Documents\\Ludumdare\\Vr Test4\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Vr Test4 [Testing]"
+        }
+      }
+    }
+  ]
+}
