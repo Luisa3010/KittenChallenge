@@ -60,7 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DisableMeshAgent.cs" />
     <Compile Include="Assets\EnemyMovement.cs" />
+    <Compile Include="Assets\EnemySpawn.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/gitkraken/KittenChallenge/Vr Test4/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
