@@ -1,0 +1,21 @@
+1. Main Menu 
+- Start
+- Wie spiele ich?
+- evtl difficulties 
+- quit
+
+2. Enemys 
+- Spawn: vom Player weg, maybe spawnpoints as scriptable object, Katzenklappen?
+- Behavior ändern: um Besen herum laufen(siehe Brackeys RPG tutorial)
+- Health
+- Models und Animationen
+- "attacks" (Schmusanimation?)
+
+3. Player 
+- Health 
+- (Model)
+- DeathScreen 
+
+4. DeathScreen
+- Quit 
+- Restart
