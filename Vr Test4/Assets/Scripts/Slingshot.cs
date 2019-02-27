@@ -7,25 +7,30 @@ public class Slingshot : MonoBehaviour {
     public GameObject catmint;
     public GameObject bandbone;
     public GameObject slingshotRigged;
+    public GameObject mainBone;
+    private Rigidbody rb;
 
     private GameObject current;
 
-
-    
     public float speed = 1;
+    [HideInInspector]
+    public bool isReadyToShoot = false;
+
+
 
     private void Start()
     {
+        rb = bandbone.GetComponent<Rigidbody>();
         spawnCatMint();
+        rb.isKinematic = true;
     }
-
-   
 
     public void spawnCatMint()
     {
         current = Instantiate(catmint);
         current.transform.parent = bandbone.transform;
         current.transform.localPosition = new Vector3(1, 0,0);
+        isReadyToShoot = true;
        
     }
 
@@ -37,9 +42,16 @@ public class Slingshot : MonoBehaviour {
         Vector3 direction =  startPos - releasePos;
         
         current.transform.parent = null;
-        print(direction);
         rb.AddForce(direction * speed,ForceMode.Impulse);
         rb.useGravity = true;
         Invoke("spawnCatMint", 1);
+        bandbone.transform.parent = mainBone.transform;
+        isReadyToShoot = false;
     }
+
+    
+    
+
+   
+   
 }

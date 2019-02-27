@@ -8,3 +8,4 @@ Waffen:
 - Kissen oder anderes werfen
 
 Kitten spawnen in Wellen
+

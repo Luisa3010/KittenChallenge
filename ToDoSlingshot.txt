@@ -1,0 +1,23 @@
+To Do:
+
+Probleme lösen:
+
+        -StartPosition wird gespeichert, sobald Bone berührt wird (und dann nie wieder geupdated)
+         hebt man die Slingshot hoch, verändert sich diese Position aber
+         Resultat: Beim releasen "lerpt" der Bone an die ursprüngliche startPosition zurück, egal wo die Slingshot sich grade im Raum befindet
+         -> gefixt, Rotation muss aber noch angepasst werden.
+         
+        -bewegt man die slingshot BEVOR man mit dem Bone interagiert, bewegt sich der Bone wie gewollt mit
+         Handelt man genau anders rum, also schießt ein paar Bälle BEVOR man die Slingshot bewegt, hängt der Bone an der startPosition fest
+         
+        -bewegt man, die slingshot und lässt sie wieder los, kann es vorkommen, dass die Catmint ihre position ändert
+
+	-Prefab schießt in KittenChallenge Scene nicht
+
+	-enemy wird nicht zerstört
+
+Hinzufügen:
+ 
+  	-slingshot richtet sich beim Aufheben nach vorne (Blickrichtung) aus
+	-EnemyDamage Skript
+         

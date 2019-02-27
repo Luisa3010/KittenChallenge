@@ -9,42 +9,59 @@ namespace Valve.VR.InteractionSystem
     [RequireComponent( typeof(Throwable))]
     public class Slingable : MonoBehaviour
     {
-        public float test = 0.3f;   
+        public float test = 0.3f;
         protected Vector3 startPosition;
-        protected Quaternion startRotation;
+        protected Vector3 startRotation;
         public Slingshot slingshot;
+        public GameObject ReleasePoint;
+        
+       
+
+        
+
 
         public void Start()
-        { 
-            startPosition = transform.position;
-            startRotation = transform.rotation;    
-        }
+         {
+            
+            startPosition = transform.position - slingshot.transform.position;
+            startRotation = transform.rotation.eulerAngles - slingshot.transform.rotation.eulerAngles ;
+            
+         }
 
         public void drawBack()
         {
-            print("drawn");
+           
         }
 
         public void release()
         {
-            print("release");
             StartCoroutine(drawPieceMoveBack());
-            
         }
-
+        
+        
         IEnumerator drawPieceMoveBack()
         {
-            Vector3 startPos = slingshot.transform.position + slingshot.transform.up * 0.3f - slingshot.transform.forward * 0.07f;
+            Vector3 startPos = ReleasePoint.transform.position;
             Vector3 releasePos = transform.position;
-            while(Vector3.Distance(transform.position,startPosition) > 0.01f)
+            Vector3 startRot = slingshot.transform.rotation.eulerAngles + startRotation;
+
+            
+            while(Vector3.Distance(transform.position,startPos) > 0.01f)
             {
+                startPos = ReleasePoint.transform.position;
+                transform.position = Vector3.Lerp(transform.position, startPos, 0.5f);
+
+                 
                 
-                transform.position = Vector3.Lerp(transform.position, startPosition, 0.5f);
-                transform.rotation = Quaternion.Lerp(transform.rotation, startRotation, 0.5f);
+                startRot = slingshot.transform.rotation.eulerAngles + startRotation;
+                transform.rotation = Quaternion.Euler(startRot);
                 yield return new WaitForEndOfFrame();
                 
             }
-            slingshot.shoot(releasePos);
+            if (slingshot.isReadyToShoot)
+            {
+                slingshot.shoot(startPos);
+            }
            
         }
     }
